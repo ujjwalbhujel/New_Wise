@@ -346,22 +346,29 @@ body { background-color: #eeeeee; }
 			&.active a { background: unset; color: @wise_secondary_color; }
 
 			ul.dropdown-menu { /* Dropdown menu for network and alumnae homepage */
-				display: block; width: 1440px; position: absolute; left: -573px; top: 75px; padding: 0px 220px; box-shadow: unset; border: 0px; background-color: @wise_primary_light; border-radius: unset; padding: 0p; margin: 0px;
-				li { float: left;
-					&:last-child { position: unset; }
-					&.first:after { display: none; }
-					a { display: block; position: relative; padding: 15px 25px;
-						.robotoCondensedRegular(); color: @wise_white;
-						&.active { .robotoCondensedBold(); 
-							&:before { content: '';  width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 8px solid @wise_white; position: absolute; top: 100%; margin-top: -8px; left: 50%; margin-left: -8px; }
-						}
-					}
-				}
+				display: none;
 			}
-			&:nth-child(2) ul.dropdown-menu { left: -720px; }
+			 
 		}
 	}
 }
+
+/* sub menu */
+#sub_menu{border: 0px; background-color: @wise_primary_light; padding: 0px; margin: 0px;margin-left: auto;margin-right: auto;
+	ul.menu{text-align: center;margin:0px;padding:0px;}
+	ul.menu li { display: inline-block;
+		a { display: block; position: relative; padding: 15px 25px;text-transform: uppercase;letter-spacing: 1.2px; outline: none;
+			.robotoCondensedRegular(); color: @wise_white;
+			&.active, &:hover, &:focus{background:unset; }
+			&.active { .robotoCondensedBold(); 
+				&:before { content: '';  width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 8px solid @wise_white; position: absolute; top: 100%; margin-top: -8px; left: 50%; margin-left: -8px; }
+			}
+		}
+	}
+}
+
+
+
 .navbar-default { border: none; }
 .main-container { background-color: @wise_secondary_fade !important; }
 .container {

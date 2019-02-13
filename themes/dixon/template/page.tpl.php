@@ -120,22 +120,16 @@
 <?php endif; ?>
 
 
-<div class="breadcrumb_wrapper">
- <?php if (!empty($breadcrumb)): ?>
-    <div class="breadcrumb"><div class="container"><?php print strip_tags($breadcrumb, '<a><h2><span>') . ' <span class="delimiter">&gt;</span> <span class="current_title"> ' . $title .'</span>';  ?></div></div>
- <?php endif; ?>    
-</div> 
+<?php if (!empty($page['header'])): ?>
+  <div  id="sub_menu" class="navbar container">
+    <?php print render($page['header']); ?>
+  </div> <!-- /#page-header -->
+ <?php endif; ?>
  
 
 
 <div class="main-container <?php print $container_class; ?>">
 
-<?php if (!empty($page['header'])): ?>
-  <header role="banner" id="page-header">
-    <?php print render($page['header']); ?>
-  </header> <!-- /#page-header -->
- <?php endif; ?>
- 
   <div class="row">
 
     <?php if (!empty($page['sidebar_first'])): ?>
