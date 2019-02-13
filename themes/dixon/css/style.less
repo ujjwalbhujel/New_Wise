@@ -348,7 +348,6 @@ body { background-color: #eeeeee; }
 			ul.dropdown-menu { /* Dropdown menu for network and alumnae homepage */
 				display: none;
 			}
-			 
 		}
 	}
 }
@@ -366,9 +365,6 @@ body { background-color: #eeeeee; }
 		}
 	}
 }
-
-
-
 .navbar-default { border: none; }
 .main-container { background-color: @wise_secondary_fade !important; }
 .container {
@@ -722,7 +718,7 @@ form { width: 60%; margin: 0px auto;
 					h2 { font-weight: normal; line-height: 1.3;  text-align: left;}
 				}
 				.views-field-body { .robotoRegular(); font-size: 16px; margin: 25px 0px 50px 0px; color: @wise_primary_light; 
-					p { text-align: left; 
+					p { .intro-copy(); text-align: left;
 						@media (max-width: 480px) {
 							font-size: 14px;
 						}
@@ -745,6 +741,17 @@ form { width: 60%; margin: 0px auto;
 			}
 			@media (max-width: 480px) {
 				display: block; margin: 25px 0px;
+			}
+			.views-field-field-txt-above { margin: 25px 0px;
+				p { .intro-copy(); text-align: left; color: @wise_primary_color; }
+			}
+			.session_info { margin: 50px 0px;
+				table tr td { text-align: left; .robotoCondensedBold(); color: @wise_primary_color; text-transform: uppercase; letter-spacing: 1.3px; padding: 5px 0px; font-size: 16px; }
+			}
+			.views-field-field-text-below-session-info {
+				text-align: left;
+				h3 { .robotoCondensed();  text-align: left; font-size: 28px; text-transform: none; }
+				p { .robotoRegular(); line-height: 2; color: @wise_primary_color; margin: 50px 0px;}
 			}
 		}
 	}
@@ -793,6 +800,7 @@ form { width: 60%; margin: 0px auto;
 	}
 }
 
+
 /* About the speakers */
 .view-speakers-contributors { margin: 50px 0px;
 	.view-header {
@@ -816,9 +824,10 @@ form { width: 60%; margin: 0px auto;
 
 /* Other event large stripe */
 .image_text_cta { position: relative; width: 1440px; margin-left: -275px; display: flex; flex-direction: row-reverse;
-	.float_text { width: 50%; background-color: @wise_primary_color; padding-left: 260px; padding-right: 50px; padding-top: 50px;
+	.float_text { width: 50%; background-color: @wise_primary_color; padding-left: 260px; padding-right: 50px; padding-top: 50px; text-align: left;
 		h3 { color: @wise_white; text-align: left; font-size: 48px; line-height: 1.3; }
 		p { color: @wise_white; text-align: left; font-size: 18px; line-height: 1.5; .robotoRegular(); }
+		a { .wise-btn-pink(); }
 	}
 	.float_image { width: 50%; 
 		img { width: 100%; }
@@ -1162,7 +1171,6 @@ form { width: 60%; margin: 0px auto;
 }
 /* ============= Article detail page with Image ends ===================*/
 
-/* ============= Global footer and disclaimer starts ===================*/
 
 /* ============= Global footer and disclaimer starts ===================*/
 .footer { border-top: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px;
@@ -1186,40 +1194,6 @@ footer { text-align: center;
 	}
 }
 /* ============= Global footer and disclaimer ends ===================*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Admin edit tabs */
