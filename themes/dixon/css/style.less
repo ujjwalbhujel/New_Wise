@@ -380,15 +380,6 @@ body { background-color: #eeeeee; }
 	}
 }
 .main_bottom { text-align: center; }
-.footer { border-top: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px;
-	.container { background-color: @wise_primary_color; padding-top: 25px; padding-bottom: 25px; 
-		.region-footer {
-			@media (min-width: 1200px ) {
-				width: 1140px; margin: 0px auto;
-			}	
-		}
-	}
-}
 
 a, a:hover { text-decoration: none; cursor: pointer;}
 a:hover { color: @wise_white; }
@@ -1172,12 +1163,23 @@ form { width: 60%; margin: 0px auto;
 /* ============= Article detail page with Image ends ===================*/
 
 /* ============= Global footer and disclaimer starts ===================*/
+
+/* ============= Global footer and disclaimer starts ===================*/
+.footer { border-top: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px;
+	.container { background-color: @wise_primary_color; padding-top: 25px; padding-bottom: 25px; 
+		.region-footer {
+			@media (min-width: 1200px ) {
+				width: 920px; margin: 0px auto;
+			}	
+		}
+	}
+}
 footer { text-align: center;
 	p { color: @wise_secondary_fade; font-size: 12px;}
 	.footer-disclaimer-menu {
-		ul {
-			li { float: left; list-style: none;
-				a { text-decoration: none; color: @wise_secondary_fade; display: block; }
+		ul { display: flex; flex-flow: row; flex-wrap: wrap; width: 65%; margin: 0px auto; justify-content: space-around;
+			li { float: left; list-style: none; color: @wise_secondary_fade; font-size: 12px;
+				a { text-decoration: none; color: @wise_secondary_fade; display: block; font-size: 12px; }
 			}
 			&::after { clear: both; }
 		}
