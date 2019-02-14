@@ -92,38 +92,39 @@
 .text-center { text-align: center; }
 
 /* Headings & Typography */
+p { .robotoRegular(); color: @wise_primary_color; }
 h1, h2, h3, h4, h5, h6 { font-weight: bold; text-transform: capitalize; color: @wise_primary_color; font-family: @primaryFont;
-	@media (max-width: 420px)
+	@media (max-width: 480px)
 	{
 		text-align: center;
 	}
 }
-h1 { font-size: 60px; 
-	@media (max-width: 420px)
+h1 { font-size: 56px; 
+	@media (max-width: 480px)
 	{
 		font-size: 28px;
 	}
 }
 h2 { font-size: 44px;
-	@media (max-width: 420px)
+	@media (max-width: 480px)
 	{
 		font-size: 24px;
 	}
 }
 h3 { font-size: 32px;
-	@media (max-width: 420px)
+	@media (max-width: 480px)
 	{
 		font-size: 20px;
 	}
 }
 h4 { font-size: 24px; margin-top: 20px;
-	@media (max-width: 420px)
+	@media (max-width: 480px)
 	{
 		font-size: 18px;
 	}
 }
 p { font-size: 16px; color: @wise_primary_color; line-height: 1.8; margin: 15px 0px; 
-	@media (max-width: 420px) {
+	@media (max-width: 480px) {
 		text-align: center;
 	}
 }
@@ -231,7 +232,7 @@ p { font-size: 16px; color: @wise_primary_color; line-height: 1.8; margin: 15px 
 	&:hover {
 		color: @wise_white;
 	}
-	@media (max-width: 420px)
+	@media (max-width: 480px)
 	{
 		
 	}
@@ -314,12 +315,14 @@ p { font-size: 16px; color: @wise_primary_color; line-height: 1.8; margin: 15px 
 		color: @wise_secondary_color;
 	}
 }
-
 .intro-copy {
 	.robotoRegular(); font-size: 20px; line-height: 1.6; color: @wise_primary_light_fade; text-align: center;
 	@media (max-width: 480px) {
 		font-size: 16px;
 	}
+}
+.intro-copy-left {
+	.intro-copy(); text-align: left;
 }
 
 /* Default styles*/
@@ -408,11 +411,12 @@ form { width: 60%; margin: 0px auto;
 	}
 	label { font-size: 15px; .robotoCondensedRegular(); color: @wise_primary_light; text-transform: capitalize; display: block; text-align: left; }
 	input { border: 1px solid #ddd !important, 2px solid red !important; border-radius: 0px !important; background-color: @wise_secondary_fade !important; 
-		padding: 10px !important; height: 50px !important; width: auto !important; color: @wise_primary_color !important; font-size:16px !important; .robotoRegular();  }
-	input:focus { border:1px solid #ddd !important; box-shadow: unset !important; transition: unset !important; }
+		padding: 10px !important; height: 50px !important; width: auto !important; color: @wise_primary_color !important; font-size: 20px !important; .robotoRegular();  }
+	input:focus { border: 1px solid #ddd !important; box-shadow: unset !important; transition: unset !important; }
 	textarea { border: 1px solid #ddd !important; border-radius: 0px !important; background-color: @wise_secondary_fade !important; }
 	textarea:focus { box-shadow: unset !important; }
-    .radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"]{height: auto!important}   
+    .radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"]{height: auto!important}  
+
 /*	div.webform-component--first-name {
 		width: 45%;
 	}
@@ -460,7 +464,6 @@ form { width: 60%; margin: 0px auto;
       }
 #Newsletter_Form, #EOI_Form, #cventForm{height: 100%;max-width: 500px;width:100%;}      
 .webform-progressbar{display: none;}
-
 	
 /* Pop up Form */
 #colorbox {
@@ -513,7 +516,7 @@ form { width: 60%; margin: 0px auto;
 	article {
 		.field-name-field-top-section-copy { padding-bottom: 50px;
 			p { margin-top: 50px;}
-			@media (max-width: 420px) {
+			@media (max-width: 480px) {
 			h1 { font-size: 28px; }
 			p { margin-top: 25px;}
 			}
@@ -524,7 +527,7 @@ form { width: 60%; margin: 0px auto;
 					.paragraphs-item-block-with-text-image-and-link {
 						margin: 0px 15px; background-color: @wise_white; padding-bottom: 50px;
 						.field-name-field-picture {
-							img { width: 420px; height: 250px; }
+							img { width: 480px; height: 250px; }
 						}
 						.field-name-field-text-copy {
 							h2 { margin: 50px 0px 25px 0px; }
@@ -666,7 +669,70 @@ form { width: 60%; margin: 0px auto;
 		}
 	}
 }
+.signup_newsletter {
+	h3 { font-size: 48px; 
+		@media (max-width: 480px) {
+			font-size: 28px;
+		}
+	}
+}
 
+/* Alumnae - Events landing page*/
+.view-wise-alumnae-events-page {
+	.view-events-list();
+	margin-top: 50px; text-align: left !important;
+	.view-content {
+		.views-row {
+			display: flex; flex-flow: column; position: relative; padding: 25px; background-color: @wise_white;
+			.views-field-field-event-city { color: @wise_secondary_color; text-transform: uppercase; font-size: 14px; .robotoCondensedBold(); letter-spacing: 1.2px; }
+			.workshop_label { position: absolute; right: 25px; text-align: right; display: block; width: 100%; .views-field-field-event-city(); color: @wise_primary_color }
+			.views-field-field-event-topic { .views-field-field-event-city(); color: @wise_primary_light_fade; margin-top: 25px; }
+			.views-field-title { padding-bottom: 5px; border-bottom: 1px solid #ddd; h3 { .views-field-field-event-city(); text-transform: none; color: @wise_primary_color; font-size: 28px; letter-spacing: normal; } }
+			.views-field-body { p { .robotoMedium(); font-size: 14px;  } }
+			.views-field-field-event-venue { .robotoCondensedRegular(); color: @wise_primary_light_fade; text-transform: uppercase; font-size: 16px; letter-spacing: 1px; margin: 25px 0px; }
+			.views-field-field-event-sessions {
+				ul {
+					display: flex; flex-flow: row; justify-content: space-between; margin: 25px 0px; margin-left: -65px;
+					li { 
+						list-style: none; display: block; background-color: #FBFBFB; padding: 25px; margin-left: 25px; width: 33.33%;
+						p { margin: 0px; .robotoMedium(); line-height: 1.8; font-size: 14px; }
+					}
+				}
+			}
+			@media (max-width: 480px) {
+				.views-field-field-event-city { font-size: 12px; }
+				.workshop_label { font-size: 12px; }
+				.views-field-field-event-topic { .views-field-field-event-city(); color: @wise_primary_light_fade; margin-top: 25px; }
+				.views-field-title { h3 { font-size: 18px; } }
+				.views-field-body { p { font-size: 12px;  } }
+				.views-field-field-event-venue { font-size: 14px; margin: 10px 0px; }
+				.views-field-field-event-sessions {
+					ul {
+						display: flex; flex-flow: column; justify-content: space-between; margin: 25px 0px; margin-left: -40px;
+						li { 
+							width: 100%; margin: 12.5px 0px;
+							p { margin: 0px; .robotoMedium(); line-height: 1.8; font-size: 14px; }
+						}
+					}
+				}				
+			}
+		}
+	}
+}
+
+/* Network Homepage */
+.wise_network {
+	.view-events-list {
+	.view-filters { display: none; }
+	}
+
+}
+.events.wise_network {
+	.view-events-list {
+	.view-filters { display: block; }
+	}
+
+}
 
 /* Network - Events Landing page */
 .view-events-list {
@@ -710,7 +776,7 @@ form { width: 60%; margin: 0px auto;
 		.views-row {
 			display: flex; margin: 100px 0px; flex-wrap: wrap;
 			.views-field-field-event-image { width: 50%; height: 700px; 
-				img { height: 700px; 
+				img { height: auto; 
 					@media (max-width: 480px) {
 						height: auto;
 					}
@@ -771,50 +837,6 @@ form { width: 60%; margin: 0px auto;
 	}
 }
 
-/* Alumnae - Events landing page*/
-.view-wise-alumnae-events-page {
-	.view-events-list();
-	margin-top: 50px; text-align: left !important;
-	.view-content {
-		.views-row {
-			display: flex; flex-flow: column; position: relative; padding: 25px; background-color: @wise_white;
-			.views-field-field-event-city { color: @wise_secondary_color; text-transform: uppercase; font-size: 14px; .robotoCondensedBold(); letter-spacing: 1.2px; }
-			.workshop_label { position: absolute; right: 25px; text-align: right; display: block; width: 100%; .views-field-field-event-city(); color: @wise_primary_color }
-			.views-field-field-event-topic { .views-field-field-event-city(); color: @wise_primary_light_fade; margin-top: 25px; }
-			.views-field-title { padding-bottom: 5px; border-bottom: 1px solid #ddd; h3 { .views-field-field-event-city(); text-transform: none; color: @wise_primary_color; font-size: 28px; letter-spacing: normal; } }
-			.views-field-body { p { .robotoMedium(); font-size: 14px;  } }
-			.views-field-field-event-venue { .robotoCondensedRegular(); color: @wise_primary_light_fade; text-transform: uppercase; font-size: 16px; letter-spacing: 1px; margin: 25px 0px; }
-			.views-field-field-event-sessions {
-				ul {
-					display: flex; flex-flow: row; justify-content: space-between; margin: 25px 0px; margin-left: -65px;
-					li { 
-						list-style: none; display: block; background-color: #FBFBFB; padding: 25px; margin-left: 25px; width: 33.33%;
-						p { margin: 0px; .robotoMedium(); line-height: 1.8; font-size: 14px; }
-					}
-				}
-			}
-			@media (max-width: 480px) {
-				.views-field-field-event-city { font-size: 12px; }
-				.workshop_label { font-size: 12px; }
-				.views-field-field-event-topic { .views-field-field-event-city(); color: @wise_primary_light_fade; margin-top: 25px; }
-				.views-field-title { h3 { font-size: 18px; } }
-				.views-field-body { p { font-size: 12px;  } }
-				.views-field-field-event-venue { font-size: 14px; margin: 10px 0px; }
-				.views-field-field-event-sessions {
-					ul {
-						display: flex; flex-flow: column; justify-content: space-between; margin: 25px 0px; margin-left: -40px;
-						li { 
-							width: 100%; margin: 12.5px 0px;
-							p { margin: 0px; .robotoMedium(); line-height: 1.8; font-size: 14px; }
-						}
-					}
-				}				
-			}
-		}
-	}
-}
-
-
 /* About the speakers */
 .view-speakers-contributors { margin: 50px 0px;
 	.view-header {
@@ -837,15 +859,31 @@ form { width: 60%; margin: 0px auto;
 }
 
 /* Other event large stripe */
-.image_text_cta { position: relative; width: 1440px; margin-left: -275px; display: flex; flex-direction: row-reverse;
+.image_text_cta { 
+	position: relative; width: 1440px; margin-left: -275px; display: flex; flex-direction: row-reverse;
 	.float_text { width: 50%; background-color: @wise_primary_color; padding-left: 260px; padding-right: 50px; padding-top: 50px; text-align: left;
-		h3 { color: @wise_white; text-align: left; font-size: 48px; line-height: 1.3; }
+		h3 { color: @wise_white; text-align: left; font-size: 48px; line-height: 1.3; .alumnae-icon-left(); }
 		p { color: @wise_white; text-align: left; font-size: 18px; line-height: 1.5; .robotoRegular(); }
 		a { .wise-btn-pink(); }
 	}
 	.float_image { width: 50%; 
 		img { width: 100%; }
 	}
+	@media (max-width: 768px) {
+		position: unset; width: auto; margin-left: 0px; display: block;
+		.float_text { width: 100%; padding: 25px; 
+			h3 { font-size: 38px; }
+		}
+		.float_image { display: none; }
+		@media (max-width: 480px) {
+			position: unset; width: auto; margin-left: 0px; display: block;
+			.float_text { width: 100%; padding: 25px; 
+				h3 { font-size: 28px; }
+			}
+			.float_image { display: none; }
+		}
+	}
+
 }
 
 
@@ -868,12 +906,12 @@ form { width: 60%; margin: 0px auto;
 			.field-content {
 				flex-direction: column-reverse;
 				.banner_left {width: 100%; padding-left: 0px; padding-right: 0px; padding-top: 25px; h1 { margin-top: 0px !important; margin-bottom: 0px !important; } p { text-align: center; margin-right: 0px !important; } }
-				.banner_right { width: 100% }
+				.banner_right { width: 100%; }
 			}
 		}
 	}
 }
-.speakers-and-contributors-lists {
+.speakers-and-contributors-lists { /*Speakers & Contributers*/
 	.view-speakers-contributors {
 		h2 { .alumnae-icon-center(); }
 		p { .intro-copy(); .m-t-25(); }
@@ -936,28 +974,36 @@ form { width: 60%; margin: 0px auto;
 		}
 	}
 }
-.view-article-by-author { /* View articles by author view/block */
-	text-align: left;
-	.view-content {
-		display: flex; margin-left: -25px;
-		.views-row { width: 33.33%; padding: 25px; margin-left: 25px; background-color: #F4F5F6; 
-			.views-field-field-tags { .intro-copy(); .robotoCondensedBold(); text-align: left; font-size: 16px; text-transform: uppercase; letter-spacing: 1.5px; font-style: italic; }
-			.views-field-title { height: 300px; margin-top: 15px; a { text-decoration: none; .georgiaRegular(); font-size: 28px; display: block; color: @wise_primary_color; } }
-			.views-field-field-author-select { .robotoCondensedRegular(); text-transform: uppercase; letter-spacing: 1.5px; color: @wise_primary_light_fade; }
+.articles-by-author { /* View articles by author view/block */
+	h2.block-title { .robotoCondensedBold(); font-size: 24px; letter-spacing: 1.2px; text-transform: uppercase; margin: 50px 0px; 
+		@media (max-width: 480px) {
+			font-size: 16px;
 		}
 	}
-	@media (max-width: 480px) {
+	.view-article-by-author { 
+		text-align: left;
 		.view-content {
-			display: block; margin-left: 0px;
-			.views-row {
-				width: 100%; margin-left: 0px; margin: 15px 0px;
-				.views-field-field-tags { font-size: 12px; }
-				.views-field-title { height: auto; margin: 10px 0px; a { font-size: 20px; } }
-				.views-field-field-author-select { font-size: 12px; letter-spacing: normal; }
+			display: flex; margin-left: -25px;
+			.views-row { width: 33.33%; padding: 25px; margin-left: 25px; background-color: #F4F5F6; 
+				.views-field-field-tags { .intro-copy(); .robotoCondensedBold(); text-align: left; font-size: 16px; text-transform: uppercase; letter-spacing: 1.5px; font-style: italic; }
+				.views-field-title { height: 300px; margin-top: 15px; a { text-decoration: none; .georgiaRegular(); font-size: 28px; display: block; color: @wise_primary_color; } }
+				.views-field-field-author-select { .robotoCondensedRegular(); text-transform: uppercase; letter-spacing: 1.5px; color: @wise_primary_light_fade; }
 			}
 		}
-	}
+		@media (max-width: 480px) {
+			.view-content {
+				display: block; margin-left: 0px;
+				.views-row {
+					width: 100%; margin-left: 0px; margin: 15px 0px;
+					.views-field-field-tags { font-size: 12px; }
+					.views-field-title { height: auto; margin: 10px 0px; a { font-size: 20px; } }
+					.views-field-field-author-select { font-size: 12px; letter-spacing: normal; }
+				}
+			}
+		}
+	}	
 }
+
 /* ============= Alumnae author detail page ends ===================*/
 
 /* ============= Alumnae article landing page starts ===================*/
@@ -1201,6 +1247,11 @@ footer { text-align: center;
 				a { text-decoration: none; color: @wise_secondary_fade; display: block; font-size: 12px; }
 			}
 			&::after { clear: both; }
+			@media (max-width: 480px) {
+				flex-flow: column; width: 100%; margin: 0px; margin-left: -25px;
+				li { margin: 10px 0px; }
+				li:nth-of-type(even) { display: none; }
+			}
 		}
 	}
 }
