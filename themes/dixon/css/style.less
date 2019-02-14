@@ -368,7 +368,7 @@ body { background-color: #eeeeee; }
 .navbar-default { border: none; }
 .main-container { background-color: @wise_secondary_fade !important; }
 .container {
-	.row { padding-bottom: 25px; padding-top: 50px; text-align: center; }
+	.row { padding-bottom: 25px; text-align: center; }
 
 	@media (min-width: 1200px ) {
 		width: 1440px; background-color: @wise_white;
@@ -667,7 +667,7 @@ form { width: 60%; margin: 0px auto;
 		form {
 			width: 100%;
 			#edit-field-event-city-tid-wrapper {
-				width: 100%; padding: 15px 0px; border-bottom: 1px solid @wise_primary_light_fade; border-top: 1px solid @wise_primary_light_fade; margin-bottom: 50px;
+				width: 100%; padding: 15px 0px; border-bottom: 1px solid @wise_primary_light_fade; border-top: 1px solid @wise_primary_light_fade; 
 				.form-group {
 					width: 100%;
 					.form-item {
@@ -754,6 +754,9 @@ form { width: 60%; margin: 0px auto;
 				p { .robotoRegular(); line-height: 2; color: @wise_primary_color; margin: 50px 0px;}
 			}
 		}
+	}
+	.view-footer { border-bottom: 1px solid #ddd; padding-bottom: 25px;
+		p { .intro-copy(); text-align: left; }
 	}
 }
 
@@ -862,18 +865,15 @@ form { width: 60%; margin: 0px auto;
 .speakers-and-contributors-lists {
 	.view-speakers-contributors {
 		h2 { .alumnae-icon-center(); }
-		p { .intro-copy(); .m-t-25(); .m-b-50(); }
+		p { .intro-copy(); .m-t-25(); }
 		.view-content {
-			display: flex;
+			display: flex; flex-flow: row; flex-wrap: wrap; margin-left: -25px;
 			.views-row {
-				width: 25%; padding: 25px; background-color: #F4F5F6; margin: 12.5px;
+				width: 22.2%; padding: 25px; background-color: #F4F5F6; margin-left: 25px; border: 0px; margin-bottom: 25px;
 				.views-field-field-about-photo { img { margin: 0px auto; border-radius: 100%; } }
 				.views-field-title { height: 40px; a { display: block; color: @wise_primary_color; .robotoCondensedBold(); text-transform: uppercase; letter-spacing: 1.5px; font-size: 14px; margin-top: 25px; } }
 				.views-field-field-job-title { height: 30px; .robotoThin(); color: @wise_primary_light; text-transform: uppercase; letter-spacing: 1px; margin: 5px 0px; }
 				.views-field-body { p { .intro-copy(); font-size: 14px; } }
-				&:first-child { margin-left: 0px; }
-				&:nth-child(4), &:nth-child(8), &:nth-child(12), &:nth-child(16) { margin-right: 0px; }
-				&:nth-child(5), &:nth-child(9), &:nth-child(13), &:nth-child(17) { margin-left: 0px; }
 			}
 			@media (max-width: 480px) {
 				display: block;
