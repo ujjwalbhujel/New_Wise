@@ -138,6 +138,9 @@ p { font-size: 16px; color: @wise_primary_color; line-height: 1.8; margin: 15px 
 .form-group{margin-bottom: 25px;}
 .form-group:last-child, .panel:last-child{margin-bottom: 25px;}
 
+a, a:hover{ text-decoration: none; cursor: pointer;}
+a:hover, a:focus{ color: @wise_white;outline: none; }
+
 .network-icon {
 	background-image: url('../../../../default/files/network-icon.jpg');
 }
@@ -233,7 +236,10 @@ p { font-size: 16px; color: @wise_primary_color; line-height: 1.8; margin: 15px 
 	border: 0px;
 	border-radius: 0px;
 	&:hover {
-		color: @wise_white;
+		color: @wise_white; text-decoration: none;
+	}
+	&:hover {
+		text-decoration: none;
 	}
 	@media (max-width: 480px)
 	{
@@ -262,7 +268,7 @@ p { font-size: 16px; color: @wise_primary_color; line-height: 1.8; margin: 15px 
 }
 .wise-btn-icon-next { 
 	.wise-btn-inv();
-	padding: 10px 20px;
+	padding: 10px 20px; background: transparent; border: 0px;
 	&::after {
 		content:"\27F6";
 		position: relative;
@@ -294,7 +300,7 @@ p { font-size: 16px; color: @wise_primary_color; line-height: 1.8; margin: 15px 
 	padding: 0px;
 }
 .wise-link-next {
-	.wise-link-dft();
+	.wise-link-dft(); background-color: transparent;
 	&::after {
 		content:"\27F6";
 		position: relative;
@@ -302,7 +308,7 @@ p { font-size: 16px; color: @wise_primary_color; line-height: 1.8; margin: 15px 
 	}
 }
 .wise-link-prev {
-	.wise-link-dft();
+	.wise-link-dft(); background-color: transparent;
 	&::before {
 		content:"\27F5";
 		position: relative;
@@ -310,7 +316,7 @@ p { font-size: 16px; color: @wise_primary_color; line-height: 1.8; margin: 15px 
 	}
 }
 .wise-link-pink {
-	.wise-btn-inv();
+	.wise-btn-inv(); background-color: transparent;
 	color: @wise_secondary_color;
 	border: none;
 	padding: 0px;
@@ -355,7 +361,9 @@ body { background-color: #eeeeee; }
 			}
 			&:last-child { position: absolute; right: 0; }
 			&.first:after { content: "|"; font-size: 17px; .robotoCondensed(); color: @wise_primary_light_fade; position: absolute; top: 10px; left: 97%;}
-			&.active a { background: unset; color: @wise_secondary_color; }
+			&.active a { background: unset; color: @wise_secondary_color; 
+				&.active:focus { background-color: unset; }
+			}
 
 			ul.dropdown-menu { /* Dropdown menu for network and alumnae homepage */
 				display: none;
@@ -363,6 +371,8 @@ body { background-color: #eeeeee; }
 		}
 	}
 }
+/* IE fixes */
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus { background-color: transparent; }
 
 /* sub menu */
 #sub_menu{border: 0px; background-color: @wise_primary_light; padding: 0px; margin: 0px;margin-left: auto;margin-right: auto;
@@ -370,7 +380,7 @@ body { background-color: #eeeeee; }
 	ul.menu li { display: inline-block;
 		a { display: block; position: relative; padding: 15px 25px;text-transform: uppercase;letter-spacing: 1.2px; outline: none;
 			.robotoCondensedRegular(); color: @wise_white;
-			&.active, &:hover, &:focus{background:unset; }
+			&.active, &:hover, &:focus{background:unset; background: transparent; }
 			&.active { .robotoCondensedBold(); 
 				&:before { content: '';  width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 8px solid @wise_white; position: absolute; top: 100%; margin-top: -8px; left: 50%; margin-left: -8px; }
 			}
@@ -389,8 +399,6 @@ body { background-color: #eeeeee; }
 }
 .main_bottom { text-align: center; }
 
-a, a:hover{ text-decoration: none; cursor: pointer;}
-a:hover, a:focus{ color: @wise_white;outline: none; }
 blockquote { background-color: @wise_primary_light; }
 .text-caps { text-transform: uppercase; }
 .text-pink { .text-caps(); color: @wise_secondary_color; }
@@ -754,7 +762,6 @@ form { width: 60%; margin: 0px auto;
 					&:last-child{margin-bottom:0px;}
 					.bef-select-as-links > .form-item{display: flex; justify-content: space-around;}
 					.form-item {
-
 						a {
 							display: block;
 							text-transform: uppercase;
@@ -865,14 +872,14 @@ form { width: 60%; margin: 0px auto;
 
 /* Other event large stripe */
 .image_text_cta { 
-	position: relative; width: 100%; margin-left: -275px; display: flex; flex-direction: row-reverse;
-	.float_text { width: 50%; background-color: @wise_primary_color; padding-left: 260px; padding-right: 50px; padding-top: 50px; text-align: left;
-		h3 { color: @wise_white; text-align: left; font-size: 48px; line-height: 1.3; .alumnae-icon-left(); }
+	/*position: relative; margin-left: -275px;*/ width: 100%;  display: flex; flex-direction: row-reverse;
+	.float_text { width: 50%; background-color: @wise_primary_color; /*padding-left: 260px;  padding-right: 50px;*/ padding: 0px 25px; padding-top: 25px; text-align: left;
+		h3 { color: @wise_white; text-align: left; line-height: 1.3; .alumnae-icon-left(); margin: 0px;}
 		p { color: @wise_white; text-align: left; font-size: 18px; line-height: 1.5; .robotoRegular(); }
 		a { .wise-btn-pink(); }
 	}
 	.float_image { width: 50%; 
-		img { width: 100%; }
+		img { width: 100%; height: auto; }
 	}
 	@media (max-width: 768px) {
 		position: unset; width: auto; margin-left: 0px; display: block;
@@ -946,10 +953,10 @@ form { width: 60%; margin: 0px auto;
 		.field-content {
 			display: flex; align-items: flex-end;
 			.about_left{width:37%;}
-			.info_right { width:60%; .p-l-50(); text-align: left; /*position: relative; height: 285px;*/
-				.author_type { /*position: absolute; bottom: 0; margin-bottom: 120px;*/ .robotoCondensedBold(); color: @wise_primary_fade; text-transform: uppercase; letter-spacing: 1.5px; font-size: 16px; }
-				.author_name { /*position: absolute; bottom: 0; margin-bottom: 30px;*/ margin-bottom: 30px;}
-				.author_title { /*position: absolute; bottom: 0;*/ .robotoCondensedRegular(); color: @wise_primary_fade; text-transform: uppercase; letter-spacing: 1.5px; font-size: 16px; }
+			.info_right { width:60%; .p-l-50(); text-align: left; 
+				.author_type { .robotoCondensedBold(); color: @wise_primary_fade; text-transform: uppercase; letter-spacing: 1.5px; font-size: 16px; }
+				.author_name {  margin-bottom: 30px;}
+				.author_title { .robotoCondensedRegular(); color: @wise_primary_fade; text-transform: uppercase; letter-spacing: 1.5px; font-size: 16px; }
 			}
 		}
 	}
