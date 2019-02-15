@@ -751,10 +751,10 @@ form { width: 60%; margin: 0px auto;
 			#edit-field-event-city-tid-wrapper {
 				width: 100%; padding: 15px 0px; border-bottom: 1px solid @wise_primary_light_fade; border-top: 1px solid @wise_primary_light_fade; 
 				.form-group {
-					width: 100%;
+					&:last-child{margin-bottom:0px;}
+					.bef-select-as-links > .form-item{display: flex; justify-content: space-around;}
 					.form-item {
-						display: flex;
-						justify-content: space-around;
+
 						a {
 							display: block;
 							text-transform: uppercase;
@@ -944,10 +944,11 @@ form { width: 60%; margin: 0px auto;
 .view-author-page-data { width: 85%; border-bottom: 1px solid #ddd;
 	.author_top_info { margin: 50px 0px;
 		.field-content {
-			display: flex;
-			.info_right { .p-l-50(); text-align: left; /*position: relative; height: 285px;*/
+			display: flex; align-items: flex-end;
+			.about_left{width:37%;}
+			.info_right { width:60%; .p-l-50(); text-align: left; /*position: relative; height: 285px;*/
 				.author_type { /*position: absolute; bottom: 0; margin-bottom: 120px;*/ .robotoCondensedBold(); color: @wise_primary_fade; text-transform: uppercase; letter-spacing: 1.5px; font-size: 16px; }
-				.author_name { /*position: absolute; bottom: 0; margin-bottom: 30px;*/ }
+				.author_name { /*position: absolute; bottom: 0; margin-bottom: 30px;*/ margin-bottom: 30px;}
 				.author_title { /*position: absolute; bottom: 0;*/ .robotoCondensedRegular(); color: @wise_primary_fade; text-transform: uppercase; letter-spacing: 1.5px; font-size: 16px; }
 			}
 		}
