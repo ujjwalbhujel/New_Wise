@@ -142,25 +142,26 @@ a, a:hover{ text-decoration: none; cursor: pointer;}
 a:hover, a:focus{ color: @wise_white;outline: none; }
 
 .network-icon {
-	background-image: url('../../../../default/files/network-icon.jpg');
+	background-image: url('../../../../default/files/network-large.png');
 }
 .alumnae-icon {
-	background-image: url('../../../../default/files/alumnae-icon.jpg');
+	background-image: url('../../../../default/files/alumnae-large.png');
 }
 /* Wise icons */
 .network-icon-center { /*Network Icons*/
 	&:before { 
 		content: ''; 
 		display: block; 
-		width: 40px; 
+		width: 50px; 
 		height: 40px; 
 		.network-icon();
 		background-repeat: no-repeat;
-		background-size: cover;
+		background-size: contain;
 		position: relative;
 		left: 50%;
 		margin-left: -25px;
-		margin-bottom: 10px;
+		margin-bottom: 25px;
+		margin-top: 25px;
 	}
 }
 .network-icon-left {
@@ -188,11 +189,11 @@ a:hover, a:focus{ color: @wise_white;outline: none; }
 	&:before { 
 		content: ''; 
 		display: block; 
-		width: 80px; 
+		width: 100px; 
 		height: 80px; 
 		.network-icon();
 		background-repeat: no-repeat;
-		background-size: cover;
+		background-size: contain;
 		position: relative;
 		left: 50%;
 		margin-left: -40px;
@@ -521,6 +522,12 @@ form { width: 60%; margin: 0px auto;
 }
 
 
+/* exception for empty view */
+.view-empty{
+	padding:50px 30px;text-align: center;
+	 p{font-size: 20px;font-weight: bold;}
+}
+
 
 /* Alumnae Homepage*/
 .block-system {
@@ -533,6 +540,7 @@ form { width: 60%; margin: 0px auto;
 			}
 		}
 		.paragraphs-items-field-2-links-block { padding: 50px 0px;
+			.field-name-field-picture{max-height: 248px;overflow: hidden;}
 			& > .field-name-field-2-links-block  > .field-items{display: flex;}
 			.field-items{  
 				.field-item {
@@ -787,7 +795,7 @@ form { width: 60%; margin: 0px auto;
 	.view-content { /*Events lists*/
 		.views-row {
 			display: flex; margin: 100px 0px; flex-wrap: wrap;
-			.views-field-field-event-image { width: 50%; height: 700px; 
+			.views-field-field-event-image { width: 50%;  
 				img { height: auto; 
 					@media (max-width: 480px) {
 						height: auto;
@@ -855,7 +863,7 @@ form { width: 60%; margin: 0px auto;
 		h2 { .network-icon-center(); } p { .intro-copy(); margin: 30px 0px; margin-bottom: 50px;}
 	}
 	.view-content {
-		display: flex;
+		display: flex;flex-wrap: wrap;
 		.views-row { width: 33.33%; padding: 50px;  border-right: 1px solid #ddd;
 			.views-field-field-about-photo { img { margin: 0px auto; border-radius: 100%; margin-bottom: 15px; } }
 			.views-field-title { height: 50px; a { text-decoration: none; display: block; .robotoCondensedBold(); color: @wise_primary_color; font-size: 16px; letter-spacing: 1.5px; text-transform: uppercase; } }
@@ -904,7 +912,7 @@ form { width: 60%; margin: 0px auto;
 	.views-field-field-top-section-image {
 		.field-content {
 			display: flex;position:relative;width:100%;
-			.banner_left { text-align: left; width: 50%;  padding-right: 30px;
+			.banner_left { text-align: left; width: 50%;  padding-right: 30px; padding-top:30px;padding-bottom: 30px;
 				p { text-align: left; }
 			}
 			.banner_right { width: 50%;position: absolute;right: 0px;bottom:-30px; 
